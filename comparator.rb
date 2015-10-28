@@ -35,8 +35,6 @@ class Comparator
 
   # In case of a tie compare the highest value card from each hand
   def compare_cards
-    # @first_hand.values.max > @second_hand.values.max ? @first_hand : @second_hand
-
     @first_hand.values.each_with_index do |_, idx|
       return @first_hand  if @first_hand.values[idx] > @second_hand.values[idx]
       return @second_hand if @first_hand.values[idx] < @second_hand.values[idx]
