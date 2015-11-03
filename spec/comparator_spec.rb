@@ -1,4 +1,4 @@
-require_relative '../comparator.rb'
+require 'comparator'
 
 describe Comparator do
   let(:nothing)  { Hand.new("3D 1H AD 2C JS") }

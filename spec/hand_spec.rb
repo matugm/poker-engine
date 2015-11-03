@@ -1,4 +1,4 @@
-require_relative '../hand'
+require 'hand'
 
 describe Hand do
   let(:hand) { Hand.new("3D 9H AD 8C JS") }

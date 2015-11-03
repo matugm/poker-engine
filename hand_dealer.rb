@@ -1,5 +1,5 @@
-require_relative 'poker_engine'
-require_relative 'hand'
+require_relative 'lib/poker_engine'
+require_relative 'lib/hand'
 
 def gen_cards
   numbers = (2..10).to_a + %w(J K Q A)

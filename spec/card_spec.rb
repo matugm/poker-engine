@@ -1,6 +1,4 @@
-require_relative '../card'
-
-# number - suite
+require 'card'
 
 describe Card do
   let(:card) { Card.new("10D") }

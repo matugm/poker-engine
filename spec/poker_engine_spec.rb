@@ -1,4 +1,4 @@
-require_relative '../poker_engine'
+require 'poker_engine'
 
 describe PokerEngine do
   let(:nothing) { Hand.new("3D 1H AD 2C JS") }
