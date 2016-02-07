@@ -29,7 +29,7 @@ describe PokerEngine do
     expect(PokerEngine.check_two_pair(two_pair)).to be_truthy
   end
 
-  it 'doesn not find two pair when there is none' do
+  it 'does not find two pair when there is none' do
     expect(PokerEngine.check_two_pair(nothing)).to be_falsy
   end
 
