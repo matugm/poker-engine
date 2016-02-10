@@ -55,36 +55,25 @@ module PokerEngine
 
   # Sequential numbers: 10, 9, 8, 7, 6
   def straight(hand)
-    numbers = hand.values.dup
+    numbers = hand.values
     numbers = numbers.sort
 
     # Handle special case where A = 1
     return true if numbers == [2, 3, 4, 5, 14]
 
-    last = numbers.shift
-
-    numbers.each do |num|
-      return false unless last == num - 1
-      last = num
-    end
-
-    true
+    numbers
+      .each_cons(2)
+      .all? { |x, y| x == y - 1 }
   end
 
   # Sequential numbers with the same suite
   def straight_flush(hand)
-    cards = hand.cards.dup
+    cards = hand.cards
     cards = cards.sort_by(&:value)
 
-    last  = cards.shift
-
-    cards.each do |card|
-      return false unless last.suite == card.suite
-      return false unless last.value == card.value - 1
-
-      last = card
+    cards.each_cons(2).all? do |x, y|
+      x.value == y.value - 1 &&
+      x.suite == y.suite
     end
-
-    true
   end
 end
